@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "941713532330",
+    "project_id": "quickauthdart",
+    "storage_bucket": "quickauthdart.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941713532330:android:e069b2110c3322365137d3",
+        "android_client_info": {
+          "package_name": "com.example.quick_auth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpvMgJNQshNaLstJasfnwwbM9buoPmESI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

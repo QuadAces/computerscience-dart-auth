@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -344,25 +350,29 @@ class ViewObject extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
-      body: Column(
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(15),
-            child: Text(
-              'Signup',
-              style: TextStyle(
-                fontSize: 64.0,
+        appBar: AppBar(
+          title: const Text('Second Route'),
+        ),
+        body: Container(
+          width: MediaQuery.of(context).size.width * 0.1,
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.all(15),
+                child: Text(
+                  'Stored Data',
+                  style: TextStyle(
+                    fontSize: 64.0,
+                  ),
+                ),
               ),
-            ),
+              Text(
+                'firstname: ${FormData.fname}, lastname: ${FormData.lname}, dob: ${FormData.dob != null ? DateFormat("yyyy-MM-dd").format(FormData.dob ?? DateTime.now()) : 'not stored (submit via creat account button!)'}, email: ${FormData.email}, postal: ${FormData.postal}',
+                style: TextStyle(fontSize: 25),
+              )
+            ],
           ),
-          Text(
-              'firstname: ${FormData.fname}, lastname: ${FormData.lname}, dob: ${FormData.dob != null ? DateFormat("yyyy-MM-dd").format(FormData.dob ?? DateTime.now()) : 'not stored (submit via creat account button!)'}, email: ${FormData.email}, postal: ${FormData.postal}')
-        ],
-      ),
-    );
+        ));
   }
 }
 
