@@ -354,7 +354,7 @@ class ViewObject extends StatelessWidget {
           title: const Text('Second Route'),
         ),
         body: Container(
-          width: MediaQuery.of(context).size.width * 0.1,
+          padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1,)
           child: Column(
             children: [
               const Padding(
