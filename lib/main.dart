@@ -337,10 +337,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
             title: GestureDetector(
                 onTap: () => {
-                      Navigator.pop(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ViewObject()))
+                      // Navigator.pop( //! not needed for home page
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => const ViewObject()))
                     },
                 child: SizedBox(
                   width: 200,
