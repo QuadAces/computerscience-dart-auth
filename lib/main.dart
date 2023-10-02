@@ -349,7 +349,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     cursor: SystemMouseCursors.click,
                     child: Row(children: [
                       Image.asset(
-                        './XorvaLogo.jpg',
+                        '/assets/assets/XorvaLogo.jpg',
                       ),
                       const SizedBox(
                         width: 10,
