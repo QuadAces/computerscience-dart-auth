@@ -424,7 +424,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Form(
-                          autovalidateMode: AutovalidateMode.always,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
                           key: _formKey,
                           child: Column(
                             children: [
