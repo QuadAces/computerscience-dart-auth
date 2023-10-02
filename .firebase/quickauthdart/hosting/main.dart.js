@@ -67445,7 +67445,7 @@ K(a){var s,r,q,p,o,n,m,l,k,j,i,h,g,f=null,e=A.hj(f,B.fW,f,new A.a6f(),"Search"),
 if(a.U(d).f.a.a>800){s=a.U(d).f
 s=A.jV(A.hA(!1,f,B.h,B.mT,f,f,f,B.kO,f),f,s.a.a*0.1)}else s=A.h8(f,f,f,f,f,f,f,f)
 r=t.Q
-s=A.ahq(A.a([e,B.eJ,s,B.eJ,A.hj(f,B.mR,f,new A.a6g(),"Font Enlarger"),B.cv,A.hj(f,B.mP,f,new A.a6h(),"Change region"),B.cv,A.hj(f,B.fV,f,new A.a6i(),"Menu"),B.cv,A.hj(f,B.mQ,f,new A.a6j(),"Settings ")],r),A.uU(f,A.jV(A.jD(A.q5(A.a([new A.pd(A.ajK(f,f,new A.pI("assets/assets/XorvaLogo.jpg",1,f)),f),B.vM,B.w3],r),B.bE,B.bs,B.aP),B.dq,f,f,f),50,200),B.aC,!1,f,f,f,f,f,f,f,f,f,f,new A.a6k(a),f,f,f,f,f,f))
+s=A.ahq(A.a([e,B.eJ,s,B.eJ,A.hj(f,B.mR,f,new A.a6g(),"Font Enlarger"),B.cv,A.hj(f,B.mP,f,new A.a6h(),"Change region"),B.cv,A.hj(f,B.fV,f,new A.a6i(),"Menu"),B.cv,A.hj(f,B.mQ,f,new A.a6j(),"Settings ")],r),A.uU(f,A.jV(A.jD(A.q5(A.a([new A.pd(A.ajK(f,f,new A.pI("assets/assets/assets/XorvaLogo.jpg",1,f)),f),B.vM,B.w3],r),B.bE,B.bs,B.aP),B.dq,f,f,f),50,200),B.aC,!1,f,f,f,f,f,f,f,f,f,f,new A.a6k(a),f,f,f,f,f,f))
 e=a.U(d).f.a.a*0.05
 e=A.ait(new A.e6(new A.aw(e,0,e,0),A.q5(B.n7,B.bE,B.te,B.aP),f))
 d=a.U(d).f.a.a*0.1
