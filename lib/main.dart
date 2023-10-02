@@ -431,6 +431,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               TextFormField(
                                 controller: firstNameController,
                                 decoration: const InputDecoration(
+                                    label: Text('First Name'),
                                     hintText: 'Enter your first name'),
                                 validator: (value) {
                                   bool valid = isNameCompliant(value ?? '');
@@ -447,6 +448,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               TextFormField(
                                 controller: lastNameController,
                                 decoration: const InputDecoration(
+                                    label: Text('Last Name'),
                                     hintText: 'Enter your last name'),
                                 validator: (value) {
                                   bool valid = isNameCompliant(value ?? '');
@@ -462,6 +464,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               TextFormField(
                                 controller: postalAddressController,
                                 decoration: const InputDecoration(
+                                    label: Text('Postal Address'),
                                     hintText: 'Enter your postal address'),
                                 validator: (value) {
                                   bool valid = isAddressCompliant(value ?? '');
@@ -477,6 +480,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               TextFormField(
                                 controller: suburbController,
                                 decoration: const InputDecoration(
+                                    label: Text('Suburb'),
                                     hintText: 'Enter your suburb'),
                                 validator: (value) {
                                   bool valid = isSuburbCompliant(value ?? '');
@@ -493,6 +497,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               TextFormField(
                                 controller: stateController,
                                 decoration: const InputDecoration(
+                                    label: Text('State'),
                                     hintText: 'Enter your state'),
                                 validator: (value) {
                                   bool valid = isStateCompliant(value ?? '');
@@ -508,6 +513,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               TextFormField(
                                 controller: postCodeController,
                                 decoration: const InputDecoration(
+                                    label: Text('Postcode'),
                                     hintText: 'Enter your post code'),
                                 validator: (value) {
                                   bool valid = isPostCodeCompliant(value ?? '');
@@ -523,6 +529,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               TextFormField(
                                 controller: schoolController,
                                 decoration: const InputDecoration(
+                                    label: Text('School'),
                                     hintText: 'Enter your school'),
                                 validator: (value) {
                                   bool valid = isSchoolCompliant(value ?? '');
@@ -538,6 +545,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               TextFormField(
                                 controller: phoneController,
                                 decoration: const InputDecoration(
+                                    label: Text('Phone Number'),
                                     hintText: 'Enter your phone number'),
                                 validator: (value) {
                                   bool valid = isPhoneCompliant(value ?? '');
@@ -553,6 +561,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               TextFormField(
                                 controller: emailController,
                                 decoration: const InputDecoration(
+                                    label: Text('Email'),
                                     hintText: 'Enter your email address'),
                                 validator: (value) {
                                   bool valid = isEmailCompliant(value ?? '');
