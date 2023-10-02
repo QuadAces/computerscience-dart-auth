@@ -63,33 +63,6 @@ class _MyHomePageState extends State<MyHomePage> {
   final schoolController = TextEditingController();
   final phoneController = TextEditingController();
 
-  bool isPasswordCompliant(String password, [int minLength = 6]) {
-//! This function returns a boolean variable (true or false) bassed on if the password meets all the specified conditions
-
-    //* Checks if password is empty
-    if (password.isEmpty) {
-      return false;
-    }
-//* Checks if password contains a capital letter
-    bool hasUppercase = password.contains(RegExp(r'[A-Z]'));
-//* Checks if password contains a number
-    bool hasDigits = password.contains(RegExp(r'[0-9]'));
-//* Checks if password contains a lowercase letter
-    bool hasLowercase = password.contains(RegExp(r'[a-z]'));
-//* Checks if password contains a special character
-    bool hasSpecialCharacters =
-        password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
-//* Checks if password is long enough (checking the passwords length against the minimum required length
-    bool hasMinLength = password.length > minLength;
-
-//! This function will return true if all conditions are met, otherwise false is returned
-    return hasDigits &
-        hasUppercase &
-        hasLowercase &
-        hasSpecialCharacters &
-        hasMinLength;
-  }
-
   bool isEmailCompliant(String email) {
 //! This function returns a boolean variable (true or false) bassed on if the email meets all the specified conditions
 
@@ -122,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 //* Checks if name does not contain a special character
     bool doesNotHaveSpecialCharacters =
-        !name.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
+        !name.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]+-'));
 
 //! This function will return true if all conditions are met, otherwise false is returned
     return doesNotHaveDigits & doesNotHaveSpecialCharacters;
@@ -138,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 //* Checks if address does not contain a special character
     bool doesNotHaveSpecialCharacters =
-        !address.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
+        !address.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]+-'));
 
 //! This function will return true if all conditions are met, otherwise false is returned
     return doesNotHaveSpecialCharacters;
@@ -154,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 //* Checks if suburb does not contain a special character
     bool doesNotHaveSpecialCharacters =
-        !suburb.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
+        !suburb.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]+-'));
 
     //* Checks if suburb does not contain a number
     bool doesNotHaveDigits = !suburb.contains(RegExp(r'[0-9]'));
@@ -173,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 //* Checks if state does not contain a special character
     bool doesNotHaveSpecialCharacters =
-        !state.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
+        !state.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]+-'));
 
     //* Checks if state does not contain a number
     bool doesNotHaveDigits = !state.contains(RegExp(r'[0-9]'));
@@ -186,7 +159,16 @@ class _MyHomePageState extends State<MyHomePage> {
         state.toLowerCase() == 'victoria' ||
         state.toLowerCase() == 'western australia' ||
         state.toLowerCase() == 'australian capital territory' ||
-        state.toLowerCase() == 'northern territory');
+        state.toLowerCase() == 'northern territory' ||
+        state.toLowerCase() == 'new south wales' ||
+        state.toLowerCase() == 'qld' ||
+        state.toLowerCase() == 'sa' ||
+        state.toLowerCase() == 'tas' ||
+        state.toLowerCase() == 'vic' ||
+        state.toLowerCase() == 'wa' ||
+        state.toLowerCase() == 'act' ||
+        state.toLowerCase() == 'nt' ||
+        state.toLowerCase() == 'nsw');
 
 //! This function will return true if all conditions are met, otherwise false is returned
     return doesNotHaveSpecialCharacters && doesNotHaveDigits && isValidState;
@@ -208,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> {
     bool doesNotHaveLowercase = !postCode.contains(RegExp(r'[a-z]'));
 //* Checks if postCode (does not) contain a special character
     bool doesNotHavehasSpecialCharacters =
-        !postCode.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
+        !postCode.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]+-'));
 //* Checks if length is long enough (checking the passwords length against the required length)
     bool hasLength = postCode.length == length;
 
@@ -235,7 +217,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 //* Checks if school (does not) contain a special character
     bool doesNotHavehasSpecialCharacters =
-        !school.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
+        !school.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]+-'));
 
 //! This function will return true if all conditions are met, otherwise false is returned
     return doesNotHaveDigits && doesNotHavehasSpecialCharacters;
@@ -442,7 +424,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Form(
-                          // autovalidateMode: AutovalidateMode.always,
+                          autovalidateMode: AutovalidateMode.always,
                           key: _formKey,
                           child: Column(
                             children: [
@@ -584,7 +566,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                 padding: EdgeInsets.all(10),
                               ),
                               InputDatePickerFormField(
-                                fieldLabelText: 'Age (must be above 18)',
+                                fieldLabelText:
+                                    'Age dd/mm/yyyy (must be above 18)',
                                 initialDate: DateTime.utc(
                                     DateTime.now().year - 18,
                                     DateTime.now().month,
@@ -617,7 +600,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               .validate()) {
                                             //* form is saved
                                             form?.save();
-                                            //* Sets firstname, lastname, email, and postal to the values of the input
+                                            //* Sets all values to the values of the input
                                             setState(() {
                                               FormData.fname =
                                                   firstNameController.text;
@@ -629,8 +612,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   postalAddressController.text;
                                               FormData.suburb =
                                                   suburbController.text;
-                                              FormData.state =
-                                                  stateController.text;
+                                              FormData.state = stateController
+                                                  .text
+                                                  .toUpperCase();
                                               FormData.postCode =
                                                   postCodeController.text;
                                               FormData.school =
@@ -652,29 +636,29 @@ class _MyHomePageState extends State<MyHomePage> {
                                           }
                                         },
                                         child: const Text('Create Account')),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 10),
-                                      child: ElevatedButton(
-                                        onPressed: () => {},
-                                        child: const Text('Login'),
-                                      ),
-                                    )
+                                    // Padding( //!Login button was removed here
+                                    //   padding: const EdgeInsets.symmetric(
+                                    //       horizontal: 10),
+                                    //   child: ElevatedButton(
+                                    //     onPressed: () => {},
+                                    //     child: const Text('Login'),
+                                    //   ),
+                                    // )
                                   ])
                             ],
                           )),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: ElevatedButton(
-                            onPressed: () => {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const ViewObject()))
-                                },
-                            child: const Text('View Stored Data')),
-                      ),
+                      // Padding( //! removed button
+                      //   padding: const EdgeInsets.symmetric(vertical: 10),
+                      //   child: ElevatedButton(
+                      //       onPressed: () => {
+                      //             Navigator.push(
+                      //                 context,
+                      //                 MaterialPageRoute(
+                      //                     builder: (context) =>
+                      //                         const ViewObject()))
+                      //           },
+                      //       child: const Text('View Stored Data')),
+                      // ),
                     ],
                   )),
                 ),
