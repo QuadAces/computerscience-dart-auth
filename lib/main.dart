@@ -756,7 +756,7 @@ class ViewObject extends StatelessWidget {
                     cursor: SystemMouseCursors.click,
                     child: Row(children: [
                       Image.network(
-                        'assets/assets/XorvaLogo.jpg',
+                        'assets/assets/assets/XorvaLogo.jpg',
                       ),
                       const SizedBox(
                         width: 10,
