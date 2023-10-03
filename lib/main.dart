@@ -755,7 +755,7 @@ class ViewObject extends StatelessWidget {
                   child: MouseRegion(
                     cursor: SystemMouseCursors.click,
                     child: Row(children: [
-                      Image.network(
+                      Image.asset(
                         'assets/XorvaLogo.jpg',
                       ),
                       const SizedBox(
